@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_faqs"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".view.FaqActivity">
+
+
+    <LinearLayout
+        android:id="@+id/headerFaqs"
+        android:layout_width="0dp"
+        android:layout_height="108dp"
+        android:background="@drawable/gradient_purple_pink"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivBackFaqs"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="Back"
+            android:src="@drawable/back_arrow"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:text="@string/faqs"
+            android:textColor="@android:color/white"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/headerFaqs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/block_q1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/tvQ1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_1_what_is_giftbox"
+                    android:textColor="#222222"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:paddingVertical="16dp" />
+
+                <TextView
+                    android:id="@+id/tvA1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/giftbox_is_a_simple_app_to_help_you_select_schedule_and_send_gifts_to_your_loved_ones"
+                    android:textColor="#555555"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="2dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EEEEEE" />
+
+
+            <LinearLayout
+                android:id="@+id/block_q2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/tvQ2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_2_how_do_i_place_an_order"
+                    android:textColor="#222222"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:paddingVertical="16dp" />
+
+                <TextView
+                    android:id="@+id/tvA2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/choose_a_category_pick_your_gift_fill_in_the_delivery_details_and_confirm_your_order_from_the_cart"
+                    android:textColor="#555555"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="2dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EEEEEE" />
+
+
+            <LinearLayout
+                android:id="@+id/block_q3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/tvQ3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3. Can I schedule gifts ?"
+                    android:textColor="#222222"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:paddingVertical="16dp" />
+
+                <TextView
+                    android:id="@+id/tvA3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="Yes! You can schedule gifts for birthdays, anniversaries, or any special date. Just select the delivery date during checkout."
+                    android:textColor="#555555"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="2dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EEEEEE" />
+
+
+            <LinearLayout
+                android:id="@+id/block_q4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/tvQ4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="4. What payment methods do you accept?"
+                    android:textColor="#222222"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:paddingVertical="16dp" />
+
+                <TextView
+                    android:id="@+id/tvA4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="We accept cash on delivery and esewa payments."
+                    android:textColor="#555555"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="2dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EEEEEE" />
+
+
+            <LinearLayout
+                android:id="@+id/block_q5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/tvQ5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="5. How can I track my order?"
+                    android:textColor="#222222"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:paddingVertical="16dp" />
+
+                <TextView
+                    android:id="@+id/tvA5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="You'll receive a call once  your order is shipped. You can also track orders from the 'Order' tab in the app."
+                    android:textColor="#555555"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="2dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EEEEEE" />
+
+
+            <LinearLayout
+                android:id="@+id/block_q6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/tvQ6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="6. What is your return/refund policy?"
+                    android:textColor="#222222"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:paddingVertical="16dp" />
+
+                <TextView
+                    android:id="@+id/tvA6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="We offer 7-day returns for unused gifts in original packaging. Contact support within 48 hours of delivery with order details and photos."
+                    android:textColor="#555555"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="2dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EEEEEE" />
+
+
+            <LinearLayout
+                android:id="@+id/block_q7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/tvQ7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="7. Can I send gifts anonymously?"
+                    android:textColor="#222222"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:paddingVertical="16dp" />
+
+                <TextView
+                    android:id="@+id/tvA7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="Yes! Choose 'Anonymous Sender' during checkout. Your name won't appear on the gift packaging or delivery note."
+                    android:textColor="#555555"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="2dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EEEEEE" />
+
+
+            <LinearLayout
+                android:id="@+id/block_q8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/tvQ8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="8. How do I contact customer support?"
+                    android:textColor="#222222"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:paddingVertical="16dp" />
+
+                <TextView
+                    android:id="@+id/tvA8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="Email: support@giftbox.com | | WhatsApp: +977-986194408.|| Phone num: 9865341867"
+                    android:textColor="#555555"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="2dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:background="#F8E4FF">
+
+
+    <ImageView
+        android:id="@+id/backArrow"
+        android:layout_width="37dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="148dp"
+        android:contentDescription="Back"
+        android:src="@drawable/back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#6B2D92" />
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="292dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="148dp"
+        android:text="Please Check Your Email"
+        android:textColor="#6B2D92"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintStart_toEndOf="@+id/backArrow"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/subText"
+        android:layout_width="325dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="8dp"
+        android:text="We have sent the code to abc@gmail.com"
+        android:textColor="#313030"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.639"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleText" />
+
+    <!-- OTP error message -->
+
+    <!-- Timer -->
+
+    <!-- Resend -->
+
+    <!-- Verify Button -->
+
+    <LinearLayout
+        android:id="@+id/otpLayout"
+        android:layout_width="341dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="44dp"
+        android:autofillHints=""
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="6"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subText">
+
+        <EditText
+            android:id="@+id/otp1"
+            style="@style/OtpBox" />
+
+        <EditText
+            android:id="@+id/otp2"
+            style="@style/OtpBox" />
+
+        <EditText
+            android:id="@+id/otp3"
+            style="@style/OtpBox" />
+
+        <EditText
+            android:id="@+id/otp4"
+            style="@style/OtpBox" />
+
+        <EditText
+            android:id="@+id/otp5"
+            style="@style/OtpBox" />
+
+        <EditText
+            android:id="@+id/otp6"
+            style="@style/OtpBox" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvOtpError"
+        android:layout_width="354dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="20dp"
+        android:text=""
+        android:textColor="#FF0000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/otpLayout" />
+
+    <TextView
+        android:id="@+id/timerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:paddingTop="20dp"
+        android:text="Sent code again 3:00"
+        android:textColor="#313030"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvOtpError" />
+
+    <TextView
+        android:id="@+id/resendText"
+        android:layout_width="60dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="12dp"
+        android:text="Resend"
+        android:textColor="#6B2D92"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.546"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timerText" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/verifyButton"
+        android:layout_width="193dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#6B2D92"
+        android:text="Verify"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resendText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

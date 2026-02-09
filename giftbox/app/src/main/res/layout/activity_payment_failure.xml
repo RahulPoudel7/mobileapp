@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@android:color/white"
+    android:padding="24dp">
+
+    <!-- Failure Icon -->
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_error_circle"
+        android:tint="#FF6B6B"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Failure Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payment Failed"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Order Number -->
+    <TextView
+        android:id="@+id/tvFailureOrderNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order #ORD-00001"
+        android:textSize="18sp"
+        android:textColor="#666666"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Amount -->
+    <TextView
+        android:id="@+id/tvFailureAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amount: NPR 1,299"
+        android:textSize="16sp"
+        android:textColor="#666666"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Message -->
+    <TextView
+        android:id="@+id/tvFailureMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your payment was cancelled or failed.\nYour order is saved and awaiting payment.\nYou can retry payment anytime."
+        android:textSize="14sp"
+        android:textColor="#999999"
+        android:textAlignment="center"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Status Badge -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="#FFF3E0"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order Status: Awaiting Payment"
+                android:textSize="14sp"
+                android:textColor="#FF6F00"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your order has been created but payment is pending. You can view your order details or contact support to complete payment."
+                android:textSize="12sp"
+                android:textColor="#FF8F00"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- View Order Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnViewFailureOrder"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="View Order Details"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        app:backgroundTint="#9C27B0"
+        app:cornerRadius="8dp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Continue Shopping Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnContinueShoppingFailure"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Continue Shopping"
+        android:textSize="16sp"
+        android:textColor="#9C27B0"
+        app:backgroundTint="@android:color/transparent"
+        app:strokeColor="#CCCCCC"
+        app:strokeWidth="1dp"
+        app:cornerRadius="8dp" />
+
+</LinearLayout>

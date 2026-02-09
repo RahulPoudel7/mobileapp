@@ -1,0 +1,961 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8E4FF"
+    tools:context=".view.HomeActivity">
+
+    <!-- Fixed Header Section -->
+    <LinearLayout
+        android:id="@+id/header_section"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@drawable/gradient_purple_pink"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- App Title at Top -->
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:text="GiftBox"
+            android:textColor="@android:color/white"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <!-- User Info Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="15dp"
+                android:contentDescription="Profile"
+                android:src="@drawable/profile_icon"
+                app:tint="@android:color/white" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hi, User"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/welcome_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="Find the perfect gift"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:alpha="0.9" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Scrollable Content Section -->
+    <ScrollView
+        android:id="@+id/main_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/header_section"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/search_background"
+                android:drawableStart="@drawable/ic_search_24"
+                android:drawablePadding="12dp"
+                android:hint="Search for gifts..."
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
+
+            <TextView
+                android:id="@+id/categories_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categories"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="16dp" />
+
+            <LinearLayout
+                android:id="@+id/categories_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <!-- Category layouts remain the same -->
+                <LinearLayout
+                    android:id="@+id/category_birthday"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:clickable="true"
+                    android:focusable="true" >
+
+                    <ImageView
+                        android:id="@+id/birthday_icon"
+                        android:layout_width="59dp"
+                        android:layout_height="41dp"
+                        android:layout_marginBottom="4dp"
+                        android:contentDescription="Birthday"
+                        android:src="@drawable/birthday_icon" />
+
+                    <TextView
+                        android:layout_width="59dp"
+                        android:layout_height="wrap_content"
+                        android:text="Birthday"
+                        android:textColor="#6A4C93"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/category_anniversary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/anniversary_icon"
+                        android:layout_width="56dp"
+                        android:layout_height="43dp"
+                        android:layout_marginBottom="4dp"
+                        android:contentDescription="Anniversary"
+                        android:src="@drawable/fav_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Anniversary"
+                        android:textColor="#6A4C93"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/category_corporate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/corporate_icon"
+                        android:layout_width="64dp"
+                        android:layout_height="43dp"
+                        android:layout_marginBottom="4dp"
+                        android:contentDescription="Corporate"
+                        android:src="@drawable/handshake" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Corporate"
+                        android:textColor="#6A4C93"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/category_seasonal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_marginStart="4dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/seasonal_icon"
+                        android:layout_width="58dp"
+                        android:layout_height="43dp"
+                        android:layout_marginBottom="4dp"
+                        android:contentDescription="Seasonal"
+                        android:src="@drawable/seasonal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Seasonal"
+                        android:textColor="#6A4C93"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Featured Gifts Title with Back to Featured Button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp">
+
+                <TextView
+                    android:id="@+id/featured_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Featured Gifts"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#333333" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBackToFeatured"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Featured"
+                    android:textSize="12sp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:visibility="gone"
+                    app:backgroundTint="#6B2D92"
+                    app:cornerRadius="6dp" />
+            </LinearLayout>
+
+            <!-- RecyclerView for Gifts -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_gifts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+            <!-- Vertical Scrollable Gifts Section (Placeholder - will be replaced by RecyclerView) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                android:orientation="vertical"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:layout_marginTop="12dp">
+
+                <!-- Two Cards Per Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Flower Bouquet Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp">
+
+                                <ImageView
+                                    android:id="@+id/flower_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/flower" />
+                            </FrameLayout>
+
+                            <TextView
+                                android:id="@+id/flower_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Flower Bouquet"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textAlignment="center" />
+
+                            <TextView
+                                android:id="@+id/flower_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="NPR. 1299"
+                                android:textColor="#6A4C93"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textAlignment="center" />
+
+                            <Button
+                                android:id="@+id/flower_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/rounded_button_ripple_effect"
+                                android:text="Add to Cart"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Chocolate Box Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp">
+
+                                <ImageView
+                                    android:id="@+id/chocolate_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/chocolate" />
+                            </FrameLayout>
+
+                            <TextView
+                                android:id="@+id/chocolate_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Chocolate Deluxe"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textAlignment="center" />
+
+                            <TextView
+                                android:id="@+id/chocolate_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="NPR. 899"
+                                android:textColor="#6A4C93"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textAlignment="center" />
+
+                            <Button
+                                android:id="@+id/chocolate_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/rounded_button_ripple_effect"
+                                android:text="Add to Cart"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <!-- Two Cards Per Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Teddy Bear Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp">
+
+                                <ImageView
+                                    android:id="@+id/teddy_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/teddy" />
+                            </FrameLayout>
+
+                            <TextView
+                                android:id="@+id/teddy_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Cuddly Teddy"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textAlignment="center" />
+
+                            <TextView
+                                android:id="@+id/teddy_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="NPR. 799"
+                                android:textColor="#6A4C93"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textAlignment="center" />
+
+                            <Button
+                                android:id="@+id/teddy_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/rounded_button_ripple_effect"
+                                android:text="Add to Cart"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Watch Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp">
+
+                                <ImageView
+                                    android:id="@+id/watch_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/watch" />
+                            </FrameLayout>
+
+                            <TextView
+                                android:id="@+id/watch_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Elegant Watch"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textAlignment="center" />
+
+                            <TextView
+                                android:id="@+id/watch_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="NPR. 3999"
+                                android:textColor="#6A4C93"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textAlignment="center" />
+
+                            <Button
+                                android:id="@+id/watch_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/rounded_button_ripple_effect"
+                                android:text="Add to Cart"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <!-- Two Cards Per Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Perfume Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp">
+
+                                <ImageView
+                                    android:id="@+id/perfume_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/perfume" />
+                            </FrameLayout>
+
+                            <TextView
+                                android:id="@+id/perfume_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Perfume Set"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textAlignment="center" />
+
+                            <TextView
+                                android:id="@+id/perfume_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="NPR. 2499"
+                                android:textColor="#6A4C93"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textAlignment="center" />
+
+                            <Button
+                                android:id="@+id/perfume_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/rounded_button_ripple_effect"
+                                android:text="Add to Cart"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Jewelry Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp">
+
+                                <ImageView
+                                    android:id="@+id/jewelry_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/jeweller_box" />
+                            </FrameLayout>
+
+                            <TextView
+                                android:id="@+id/jewelry_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Jewellery Box"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textAlignment="center" />
+
+                            <TextView
+                                android:id="@+id/jewelry_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="NPR. 699"
+                                android:textColor="#6A4C93"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textAlignment="center" />
+
+                            <Button
+                                android:id="@+id/jewelry_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/rounded_button_ripple_effect"
+                                android:text="Add to Cart"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <!-- Two Cards Per Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Cake Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp">
+
+                                <ImageView
+                                    android:id="@+id/cake_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/cake_image" />
+                            </FrameLayout>
+
+                            <TextView
+                                android:id="@+id/cake_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Birthday Cake"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textAlignment="center" />
+
+                            <TextView
+                                android:id="@+id/cake_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="NPR. 1999"
+                                android:textColor="#6A4C93"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textAlignment="center" />
+
+                            <Button
+                                android:id="@+id/cake_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/rounded_button_ripple_effect"
+                                android:text="Add to Cart"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Photo Frame Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp">
+
+                                <ImageView
+                                    android:id="@+id/frame_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/photo_frame" />
+                            </FrameLayout>
+
+                            <TextView
+                                android:id="@+id/frame_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Photo Frame"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textAlignment="center" />
+
+                            <TextView
+                                android:id="@+id/frame_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="NPR. 499"
+                                android:textColor="#6A4C93"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textAlignment="center" />
+
+                            <Button
+                                android:id="@+id/frame_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/rounded_button_ripple_effect"
+                                android:text="Add to Cart"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <!-- Two Cards Per Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Gift Box Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp">
+
+                                <ImageView
+                                    android:id="@+id/giftbox_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/gift_placeholder" />
+                            </FrameLayout>
+
+                            <TextView
+                                android:id="@+id/giftbox_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Premium Gift Box"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textAlignment="center" />
+
+                            <TextView
+                                android:id="@+id/giftbox_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="NPR. 1499"
+                                android:textColor="#6A4C93"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textAlignment="center" />
+
+                            <Button
+                                android:id="@+id/giftbox_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/rounded_button_ripple_effect"
+                                android:text="Add to Cart"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Greeting Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp">
+
+                                <ImageView
+                                    android:id="@+id/card_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/greeting_card" />
+                            </FrameLayout>
+
+                            <TextView
+                                android:id="@+id/card_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Greeting Card"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textAlignment="center" />
+
+                            <TextView
+                                android:id="@+id/card_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="NPR. 299"
+                                android:textColor="#6A4C93"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textAlignment="center" />
+
+                            <Button
+                                android:id="@+id/card_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/rounded_button_ripple_effect"
+                                android:text="Add to Cart"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F8E4FF"
+        app:itemIconTint="@android:color/holo_purple"
+        app:itemRippleColor="@android:color/transparent"
+        app:itemTextColor="@android:color/black"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu"
+        tools:ignore="VisualLintBottomNav" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

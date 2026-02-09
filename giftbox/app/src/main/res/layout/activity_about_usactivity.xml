@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8E4FF"
+    tools:context=".view.AboutUSActivity">
+
+    <!-- Top bar -->
+    <LinearLayout
+        android:id="@+id/headerAbout"
+        android:layout_width="419dp"
+        android:layout_height="133dp"
+        android:background="@drawable/gradient_purple_pink"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivBackAbout"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:contentDescription="@string/Back"
+            android:src="@drawable/back_arrow"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:text="@string/about_us"
+            android:textColor="@android:color/white"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/headerAbout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tvAboutGiftBox"
+                android:layout_width="wrap_content"
+                android:layout_height="515dp"
+                android:lineSpacingExtra="4dp"
+                android:text="GiftBox helps you send thoughtful gifts and surprises to the people you care about. From birthdays and anniversaries to thank‑you notes and corporate hampers, we make every occasion easy and on time.\n\nBased in Chitwan and serving key cities across Nepal, GiftBox connects you with curated gift combos, cakes, flowers, and personalized products from trusted local stores. Our app is simple to use so you can browse, compare, and place an order in just a few taps.\n\nEach order is handled with care by our delivery team to ensure your gifts arrive fresh and beautifully packed. You can track orders, save addresses, and plan special occasions inside the app. We focus on fair pricing, transparent delivery charges, and responsive support—so your feelings reach your loved ones exactly when they matter most."
+                android:textColor="#555555"
+                android:textSize="17sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
