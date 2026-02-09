@@ -1,0 +1,61 @@
+%% Minimal full project use case diagram (flowchart-style for compatibility)
+flowchart LR
+  %% Actors (boxed to appear larger)
+  subgraph ActorCustomer[Customer]
+    Customer([Customer])
+  end
+
+  subgraph ActorAdmin[Admin]
+    Admin([Admin])
+  end
+
+  subgraph ActorEsewa[eSewa]
+    Esewa([eSewa])
+  end
+
+  %% System boundary
+  subgraph System[Gift Box System]
+    %% Customer flow
+    Auth((Login/Signup))
+    Browse((Browse gifts))
+    Cart((Add to cart))
+    Checkout((Checkout))
+    Pay((Pay via eSewa))
+    PayCOD((Pay via cash on delivery))
+    Confirm((Order confirmation))
+    Track((Track order))
+    Profile((Manage profile))
+    Address((Manage addresses))
+    History((Order history))
+
+    %% Admin flow
+    Catalog((Manage catalog))
+    Orders((Manage orders))
+    AdminTrack((Track orders))
+    Reports((View reports))
+    OrderStatus((Update order status))
+  end
+
+  %% Customer
+  Customer --> Auth
+  Customer --> Browse
+  Customer --> Track
+  Customer --> Profile
+  Customer --> Address
+  Customer --> History
+
+  %% Main purchase flow
+  Browse --> Cart --> Checkout
+  Checkout --> Pay --> Confirm
+  Checkout --> PayCOD --> Confirm
+
+  %% External systems
+  Pay --> Esewa
+
+  %% Admin
+  Admin --> Catalog
+  Admin --> Orders
+  Admin --> AdminTrack
+  Admin --> OrderStatus
+  Admin --> Reports
+

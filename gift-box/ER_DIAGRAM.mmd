@@ -1,0 +1,94 @@
+%% ER diagram for Gift Box system (derived from use cases)
+erDiagram
+  CUSTOMER {
+    int id PK
+    string name
+    string email
+    string phone
+    string password_hash
+    datetime created_at
+  }
+
+  ADDRESS {
+    int id PK
+    int customer_id FK
+    string label
+    string line1
+    string line2
+    string city
+    string state
+    string postal_code
+    string country
+  }
+
+  CATEGORY {
+    int id PK
+    string name
+    string slug
+  }
+
+  PRODUCT {
+    int id PK
+    int category_id FK
+    string name
+    string description
+    decimal price
+    int stock_qty
+    bool is_active
+  }
+
+  CART {
+    int id PK
+    int customer_id FK
+    datetime created_at
+  }
+
+  CART_ITEM {
+    int id PK
+    int cart_id FK
+    int product_id FK
+    int quantity
+    decimal unit_price
+  }
+
+  ORDERS {
+    int id PK
+    int customer_id FK
+    int address_id FK
+    string status
+    decimal subtotal
+    decimal delivery_fee
+    decimal discount_amount
+    decimal total_amount
+    datetime placed_at
+  }
+
+  ORDER_ITEM {
+    int id PK
+    int order_id FK
+    int product_id FK
+    int quantity
+    decimal unit_price
+  }
+
+  PAYMENT {
+    int id PK
+    int order_id FK
+    string method
+    string provider
+    string status
+    string reference
+    decimal amount
+    datetime paid_at
+  }
+
+  CUSTOMER ||--o{ ADDRESS : has
+  CATEGORY ||--o{ PRODUCT : contains
+  CUSTOMER ||--o{ CART : owns
+  CART ||--o{ CART_ITEM : includes
+  PRODUCT ||--o{ CART_ITEM : in
+  CUSTOMER ||--o{ ORDERS : places
+  ADDRESS ||--o{ ORDERS : ships_to
+  ORDERS ||--o{ ORDER_ITEM : has
+  PRODUCT ||--o{ ORDER_ITEM : in
+  ORDERS ||--o{ PAYMENT : paid_by
