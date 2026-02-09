@@ -1,0 +1,13 @@
+# Android/Gradle build outputs
+/giftbox/.gradle/
+/giftbox/build/
+/giftbox/app/build/
+/giftbox/.idea/
+/giftbox/.externalNativeBuild/
+/giftbox/.cxx/
+/giftbox/captures/
+/giftbox/local.properties
+
+# OS junk
+.DS_Store
+Thumbs.db
